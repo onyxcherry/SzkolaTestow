@@ -1,6 +1,8 @@
 from uuid import uuid1
+
 from assertpy import assert_that
-from app.vat_service import Product
+
+from app import Product
 
 product = Product(int(uuid1()), 6.74)
 

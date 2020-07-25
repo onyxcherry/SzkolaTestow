@@ -1,5 +1,6 @@
 from assertpy import assert_that
-from app.vat_service import VatService
+
+from app import VatService
 
 vat_service = VatService()
 

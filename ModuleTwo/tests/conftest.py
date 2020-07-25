@@ -1,5 +1,6 @@
 import pytest
-from app.vat_service import VatService
+
+from app import VatService
 
 
 @pytest.fixture(scope='session')
