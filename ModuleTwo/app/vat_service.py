@@ -9,7 +9,8 @@ class VatService:
   def get_gross_price_for_default_vat(self, product: object) -> float:
     return self.get_gross_price(product.net_price, self.vat_value)
 
-  def get_gross_price(self, net_price: float, vat_value: float) -> float:
+  @staticmethod
+  def get_gross_price(net_price: float, vat_value: float) -> float:
     if not 0 < vat_value < 1:
       raise ValueError('VAT value must be in range 0-1')
     # Note that price should be rounded to two decimal places
