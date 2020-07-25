@@ -1,4 +1,8 @@
 class VatService:
+  """
+  Calculate Gross price for given product's price
+  """
+
   def __init__(self) -> None:
     self.vat_value = 0.23
 
@@ -8,7 +12,7 @@ class VatService:
   def get_gross_price(self, net_price: float, vat_value: float) -> float:
     if not 0 < vat_value < 1:
       raise ValueError('VAT value must be in range 0-1')
-
+    # Note that price should be rounded to two decimal places
     gross_price = net_price * (1 + vat_value)
     return round(gross_price, 2)
 
