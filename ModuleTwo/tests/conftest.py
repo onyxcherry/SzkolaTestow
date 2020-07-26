@@ -1,7 +1,16 @@
+import logging
+
 import pytest
 from pytest_mock import session_mocker
 
 from app import VatService
+
+logging.basicConfig(
+  filename='tests.log',
+  filemode='w',
+  level=logging.DEBUG,
+  format='%(asctime)s - %(levelname)s: %(message)s',
+)
 
 
 @pytest.fixture(scope='session')

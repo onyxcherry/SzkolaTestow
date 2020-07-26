@@ -1,0 +1,14 @@
+2020-07-26 21:28:40,595 - DEBUG: Created product object
+2020-07-26 21:28:40,595 - DEBUG: Called get_gross_price_for_default_vat method
+2020-07-26 21:28:40,596 - INFO: Returned correct VAT value
+2020-07-26 21:28:40,596 - INFO: Compared to incorrect value
+2020-07-26 21:28:40,597 - INFO: Checked if mocked method called once without arguments
+2020-07-26 21:28:40,603 - DEBUG: Got gross price determined based on item category type
+2020-07-26 21:28:40,604 - INFO: Returned correct gross price
+2020-07-26 21:28:40,604 - INFO: Compared to incorrect value
+2020-07-26 21:28:40,605 - INFO: Mocked method called once with "boots" as an argument
+2020-07-26 21:28:40,608 - DEBUG: Got gross price
+2020-07-26 21:28:40,609 - INFO: Correct gross price
+2020-07-26 21:28:40,610 - INFO: Compared to incorrect value
+2020-07-26 21:28:40,613 - DEBUG: Pass invalid VAT value and expect exception
+2020-07-26 21:28:40,614 - INFO: Exception message contains correct range values
