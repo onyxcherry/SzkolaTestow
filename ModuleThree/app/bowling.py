@@ -14,8 +14,14 @@ class Bowling:
       if self.check_if_spare():
         self.score += self.pins[self.counter + 2]
         self.counter += 1
+      elif self.check_if_strike():
+        self.score += self.pins[self.counter + 1]
+        self.score += self.pins[self.counter + 2]
+        self.counter += 1
     return self.score
 
   def check_if_spare(self):
-      return self.pins[self.counter] + self.pins[self.counter + 1] == 10
+    return self.pins[self.counter] + self.pins[self.counter + 1] == 10
 
+  def check_if_strike(self):
+    return self.pins[self.counter] == 10
