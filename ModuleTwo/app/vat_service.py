@@ -1,5 +1,8 @@
+import json
 import logging
+from typing import Type
 
+from .product import Product
 from .vat_provider import VatProvider
 
 
@@ -12,7 +15,19 @@ class VatService:
     self.vat_provider = VatProvider()
     logging.debug('Created instance of VatService')
 
-  def get_gross_price_for_default_vat(self, product) -> float:
+  def get_json(self, product, net_price: float, product_type: str) -> str:
+    if product:
+      gross_price = self.get_gross_price_for_default_vat(product)
+      return self.create_json(gross_price, product.get_net_price(),
+                              product.get_product_type())
+    elif net_price and product_type:
+      gross_price = self.get_gross_price(net_price, product_type)
+      return self.create_json(gross_price, net_price, product_type)
+    else:
+      logging.warning('Unexpected arguments')
+      raise Exception('Unexpected arguments')
+
+  def get_gross_price_for_default_vat(self, product: Type[Product]) -> float:
     net_price = product.get_net_price()
     logging.debug(f'Called get_gross_price_for_default_vat method with '
                   f'{product} which net price is {net_price}')
@@ -33,6 +48,17 @@ class VatService:
       logging.warning('VAT value out of valid range')
       raise ValueError('VAT value must be in range 0-1')
     gross_price = net_price * (1 + vat_value)
-    logging.debug('Calculated gross price')
+    logging.debug(f'Calculated gross price using {net_price} as a net price '
+                  f'and {vat_value} as a vat value')
     # Note that price should be rounded to a two decimal places
     return round(gross_price, 2)
+
+  @staticmethod
+  def create_json(gross_price: float, net_price: float,
+                  product_type: str) -> str:
+    data = {
+      'gross_price': gross_price,
+      'net_price': net_price,
+      'product_type': product_type
+    }
+    return json.dumps(data, indent=2)

@@ -15,5 +15,9 @@ class Product:
     logging.debug('Called get_net_price method')
     return self.net_price
 
+  def get_product_type(self) -> str:
+    logging.debug('Called get_product_type method')
+    return self.type
+
   def __repr__(self) -> str:
     return f'<class Product id {self.id}>'
