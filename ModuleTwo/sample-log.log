@@ -1,14 +1,26 @@
-2020-07-26 21:28:40,595 - DEBUG: Created product object
-2020-07-26 21:28:40,595 - DEBUG: Called get_gross_price_for_default_vat method
-2020-07-26 21:28:40,596 - INFO: Returned correct VAT value
-2020-07-26 21:28:40,596 - INFO: Compared to incorrect value
-2020-07-26 21:28:40,597 - INFO: Checked if mocked method called once without arguments
-2020-07-26 21:28:40,603 - DEBUG: Got gross price determined based on item category type
-2020-07-26 21:28:40,604 - INFO: Returned correct gross price
-2020-07-26 21:28:40,604 - INFO: Compared to incorrect value
-2020-07-26 21:28:40,605 - INFO: Mocked method called once with "boots" as an argument
-2020-07-26 21:28:40,608 - DEBUG: Got gross price
-2020-07-26 21:28:40,609 - INFO: Correct gross price
-2020-07-26 21:28:40,610 - INFO: Compared to incorrect value
-2020-07-26 21:28:40,613 - DEBUG: Pass invalid VAT value and expect exception
-2020-07-26 21:28:40,614 - INFO: Exception message contains correct range values
+2020-07-27 10:27:53,157 - DEBUG: Created instance of Product with 22091311104929480108396675981408255323 as id, 6.74 as net price, sweatshirt as type
+2020-07-27 10:27:53,194 - DEBUG: Created instance of VatProvider
+2020-07-27 10:27:53,194 - DEBUG: Created instance of VatService
+2020-07-27 10:27:53,219 - DEBUG: Created instance of VatProvider
+2020-07-27 10:27:53,220 - DEBUG: Created instance of VatService
+2020-07-27 10:27:53,221 - DEBUG: Called get_net_price method
+2020-07-27 10:27:53,221 - DEBUG: Called get_gross_price_for_default_vat method with <class Product id 22091311104929480108396675981408255323> which net price is 6.74
+2020-07-27 10:27:53,222 - DEBUG: Calculated gross price
+2020-07-27 10:27:53,222 - DEBUG: Called get_gross_price_for_default_vat method
+2020-07-27 10:27:53,222 - INFO: Returned correct VAT value
+2020-07-27 10:27:53,223 - INFO: Compared to incorrect value
+2020-07-27 10:27:53,223 - INFO: Checked if mocked method called without arguments
+2020-07-27 10:27:53,228 - DEBUG: Called get_gross_price method with 13.7 as net price and boots as product type
+2020-07-27 10:27:53,228 - DEBUG: Called VatProvider's get_vat_for_given_type method and returned 0.05
+2020-07-27 10:27:53,229 - DEBUG: Calculated gross price
+2020-07-27 10:27:53,229 - DEBUG: Got gross price determined based on item category type
+2020-07-27 10:27:53,229 - INFO: Returned correct gross price
+2020-07-27 10:27:53,230 - INFO: Compared to incorrect value
+2020-07-27 10:27:53,230 - INFO: Mocked method called with "boots" as an argument
+2020-07-27 10:27:53,236 - DEBUG: Calculated gross price
+2020-07-27 10:27:53,237 - DEBUG: Got gross price
+2020-07-27 10:27:53,237 - INFO: Correct gross price
+2020-07-27 10:27:53,238 - INFO: Compared to incorrect value
+2020-07-27 10:27:53,241 - DEBUG: Pass invalid VAT value and expect exception
+2020-07-27 10:27:53,242 - WARNING: VAT value out of valid range
+2020-07-27 10:27:53,242 - INFO: Exception message contains correct range values
