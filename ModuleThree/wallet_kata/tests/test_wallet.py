@@ -3,9 +3,12 @@ from unittest.mock import patch
 from app import RateProvider, Stock, Wallet
 
 
-def test_passing_object_to_wallet():
+@patch('app.rate_provider.RateProvider.rate', return_value=0.85)
+def test_passing_object_to_wallet(mocked_rate):
   rate_provider = RateProvider()
-  wallet = Wallet(Stock(5, 'USD')).value('EUR', rate_provider)
+  value = Wallet(Stock(5, 'USD')).value('EUR', rate_provider)
+  assert isinstance(value, float)
+  mocked_rate.assert_called()
 
 
 @patch('app.rate_provider.RateProvider.rate', return_value=0.85)
