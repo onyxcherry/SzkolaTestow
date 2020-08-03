@@ -7,4 +7,4 @@ def test_spare_in_the_last_frame(bowling):
   bowling.roll(3)
   bowling.roll(7)
   bowling.roll(6)
-  assert_that(bowling.get_score()).is_equal_to(22)
+  assert_that(bowling.get_score()).is_equal_to(16)
